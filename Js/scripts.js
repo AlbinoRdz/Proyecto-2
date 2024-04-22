@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded',function() {
         });
 
         
-    }, 1000); 
+    }, 10000); 
 
     hideModal.addEventListener("click", ()=> {
         modal.style.display = "none";
