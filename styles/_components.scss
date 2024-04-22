@@ -1,0 +1,448 @@
+
+a{
+ text-decoration: none;
+ color: $white;
+ 
+}
+
+
+.logo{
+    color: $white;
+    &__container{
+        @include flex-center;
+        @include transition;
+        @include shadow-text;
+        &:hover{
+            color: $white-hover;
+            transform: scale(1.05);
+        }
+        .logo__text{
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: .2rem;
+
+        }
+        .logo__img{
+            width: 100px;
+           
+        }  
+    }
+}
+
+
+
+.nav{
+ 
+  &__a{
+    font-weight:700 ;
+    @include transition;
+    font-size: $header-font-size;
+    margin: 0 1em;
+    @include shadow-text;
+   
+    &:hover{
+        color:$white-hover;
+        
+    }
+  }
+}
+
+.hidden{   
+    position: absolute;
+    z-index: 10;
+    border: #000 solid 2px;
+    border-radius: 10px;
+    background-color: $header-backcolor;
+    @include flex-center;
+    flex-direction: column;
+    padding: 5em;
+    top: 0;
+    left:0;
+   
+    visibility: hidden;
+    &__info{
+    
+        .nav-container{
+            display: flex;
+            flex-direction: column;
+            .nav__a{
+                text-decoration: none;
+              
+               margin: 10px 0;
+                &:hover{
+                    background-color: $white-hover;
+                    scale: (1.15);
+                }
+             }
+        }
+        
+        
+    }
+    i{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgb(31, 127, 165);
+        padding: 1rem;
+        border-radius: 25%;
+        cursor: pointer;
+        &:hover{
+            background-color: $white-hover;
+        }
+    }
+    &.show{
+        visibility: visible;
+    }
+
+}
+///////////////////////////////////
+.bars-hidden{
+    display: none;
+    @include pointer;
+    font-size: 3em;
+
+       
+       
+}
+
+.info-container{
+    @include flex-center;
+    margin-right: 10px;
+    
+    &__user-icon{
+        @include transition;
+        font-size: $header-font-size;
+        color: $white;
+        cursor: pointer;
+        @include shadow-text;
+        &:hover{
+            color: $white-hover;
+            transform: scale(1.2); 
+           
+        }
+    }
+    &__search-box{
+        margin: 0 .5rem;
+        text-align: center;
+        padding:.2em 0;
+        border-radius: 5px;
+        border: none;
+    }
+
+    
+}
+
+
+
+.banner{
+    background-image: url("../assets/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    margin: 1rem 0;
+    background-position: center;
+    @include flex-center;
+    position: relative;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    &__container{
+        color: rgb(255, 251, 251);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__title{
+        font-size: clamp(2rem, 4vw, 4rem);
+        font-weight: 700;
+        @include shadow-text;
+       
+    }
+    &__button{
+        position: absolute;
+        bottom: 0;
+        background-color: aquamarine;
+    }
+    &__text{
+        font-size: clamp(1rem, 2vw, 2rem);
+        @include shadow-text;
+        width: 30%;
+        text-align: justify;
+        line-height: 1.5;
+    }
+
+ }
+
+.button{
+  @include button-config;
+  &:hover{
+    @include button-config-hover;
+  }
+
+    
+}
+
+.contact-button{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem ;
+    &__setup{
+        @include transition;
+        background-color: $header-backcolor;
+        @include shadow-text;
+        border:1px solid black;
+        font-size: clamp(1rem, 4vw, 2rem);
+        padding: .9rem;
+        border-radius: 5px;
+        text-transform: uppercase;
+        &:hover{
+            @include button-config-hover;
+            border: none;
+        }
+    }
+}
+
+.cards{
+   display: flex;
+   position: relative;
+   flex-wrap: wrap;
+   justify-content: center; 
+   padding-bottom: 5rem ;
+   margin: 2rem 0;
+   gap: 10px;
+    &__container{
+       width: calc(33.33% - 20px);
+       
+       margin-bottom: 3rem;
+       //border: 1px solid black;
+       
+    }
+    &__title-content{
+        text-shadow: 1px 1px 4px rgba(1,1,1,1);
+        font-size: 1.5rem;
+        @include transition;
+        &:hover{
+            color: $white-hover;
+        }
+    }
+    &__info{
+        @include flex-center;
+        padding-top: 10px;
+        img{
+            width: 4rem;
+            margin-right: 10px;
+        }
+    
+    }
+    
+    &__button{
+        position: absolute;
+        bottom: 0;
+        right: 3rem;
+        color: #000;
+        @include button-config;
+        @include transition;
+        &:hover{
+            @include button-config-hover;
+        }
+    }
+}
+
+.modal{
+    display: none;
+    width: 40%;
+    background-color: $header-backcolor;
+    padding: 20px;
+    border-radius: 20px;
+    position: fixed;
+    top: 20%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    box-shadow: 0px 1px 15px 2px #333 ;
+    z-index: 10;
+    .hide-modal{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgb(31, 127, 165);
+        padding: .4rem;
+        border-radius: 25%;
+        cursor: pointer;
+        &:hover{
+            background-color: $white-hover;
+        }
+    }
+    &__title{
+        @include text-title-config;
+        margin: 2rem;
+    }
+    &__text{
+        @include text-config;
+        
+        
+    }
+
+    &__button{
+        @include flex-center;
+        justify-content: center;
+        margin: 1rem 0;
+        @include button-config;
+        text-shadow: 1px 1px 4px rgba(1,1,1,1);
+        font-size: 1.5rem;
+        @include transition;
+        &:hover{
+            color: $white-hover;
+            scale: (1.1);
+        }
+       
+        
+    }
+   
+    
+
+}
+.about-section{
+    @include flex-center;
+    justify-content: space-evenly;
+
+
+}
+
+.about{
+    
+    width: 20%;
+    @include flex-center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 0;
+    
+    &__img{
+       
+        width: 100px;
+    }
+    &__info{
+        &-title{
+            font-size: $font-size-h1;
+            font-weight: 700;
+            @include flex-center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        &-text{
+            text-align: justify;
+            font-size: $font-size-text;
+            
+        }
+    }
+}
+
+.hide-form{
+    @include flex-center;
+    justify-content: center;
+}
+.form-main-content{
+    display: flex;
+    justify-content: center;
+}
+
+.contact-top{
+    
+    &__header{
+        &-title{
+            @include text-title-config;
+            margin: 1.5rem;
+        }
+        &-text{
+            @include text-config;
+            width: 60%;
+            margin: 0 auto;
+        }
+    }
+    &__info{
+        margin: 2.5rem auto;
+        background-color: $header-backcolor;
+        padding: 10px;
+        border-radius: 15px;
+        width: 40%;
+        strong{
+            font-weight: 700;
+        }
+        &-title{
+            @include text-title-config;
+        }
+        &-text{
+            padding: 10px 0;
+            @include text-config;
+        }
+    }
+}
+
+.form{
+    margin: 1rem 0;
+    display: none;
+    width: 50%;
+    background-color: $header-backcolor;
+    padding: 3rem;
+    border: solid #333131;
+    border-radius: 25px;
+
+    &__info{
+       &-title{
+        @include text-title-config;
+        
+       }
+       &-text{
+        @include text-config;
+       }
+    }
+    
+    &__example{
+        font-weight: 500;
+        margin: 15px auto;
+        color: $white;
+        @include shadow-text;
+    }
+    
+    &__submit{
+        input{
+
+          @include button-config;
+          @include transition;
+          &:hover{
+              @include button-config-hover;
+          }
+        }
+    }
+}
+
+
+@media screen and (max-width: 75em) { //1200px
+
+    .header{
+        display: flex;
+        padding: 1rem;
+        .bars-hidden{
+             display: contents;
+             margin:0 15px;
+        }
+        .logo, .nav{
+            display: none;
+        }
+    }
+    .cards__container{
+       width: calc(50%  - 20px);
+    }
+    .modal{
+        width: 80%;
+    }
+
+}
+@media screen and (max-width: 45.5em){
+    .cards__container{
+        width: 100%;
+     }
+}
+

@@ -1,0 +1,62 @@
+$font-Page: "Roboto" ,Arial, Helvetica, sans-serif;
+$white:#ffffff;
+$white-hover:#cecccc;
+$header-font-size:1.5rem;
+$header-backcolor: rgb(65, 187, 235);
+$font-size-h1:clamp(1rem, 2vw, 2rem);
+$font-size-text: clamp(1rem, 1.5vw, 1.5rem);
+@mixin transition{
+    transition: all .2s;
+
+
+}
+
+@mixin pointer{
+    cursor: pointer;
+}
+
+@mixin shadow-text{
+    text-shadow: 2px 2px 4px rgba(1, 1, 1, 1);
+}
+
+
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+}
+
+@mixin button-config{
+    cursor: pointer;
+    padding:.2rem 1rem ;
+    border: none;
+    border-radius: 5px;
+   
+    
+}
+
+@mixin button-config-hover{
+    background-color: $white-hover;
+    color: $white;
+    transform: scale(1.1);
+}
+
+@mixin text-title-config{
+    font-size: $font-size-h1;
+        margin: 10px 0;
+        text-align: center;
+        font-weight: 700;
+        @include shadow-text;
+        color: $white;
+}
+
+@mixin text-config{
+        font-size: $font-size-text;
+        margin: 10px 0;
+        text-align: justify;
+        color: $white;
+        font-weight: 400;
+        @include shadow-text;
+        
+}
+
+
